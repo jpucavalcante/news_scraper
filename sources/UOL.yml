@@ -1,0 +1,25 @@
+description: |
+  Each source has the info in different places, also the reliability of the info varies, this file lists where to get the info we want
+  in an easy way so we can change it in the future and this also scales better for things like automated testing.
+
+  It generally is divided into 3 categories:
+    sitemap_url: it's the link to the feed that we are gonna be consuming from
+    sitemap_paths: some info is already available in the sitemap itself
+    webpage_paths: some info is just available in the webpage itself
+
+  One important thing to note here is the stability hierach, the same information can be gathered from differente places, and some
+  of them are more likely to change than others, the order of preference is as follows:
+    sitemap -> meta tags -> og (open graph) -> html 
+
+sitemap_url: https://noticias.uol.com.br/sitemap/v2/today.xml
+sitemap_paths:
+  - item_path: //urlset/url
+  - webpage_link: //urlset/url/loc
+  - date_info: 
+    - date: //urlset/url/lastmod
+    - date_format: ISO
+webpage_paths:
+  - title: //meta[@property='og:title']
+  - subtitle: //meta[@property='og:description']
+
+
