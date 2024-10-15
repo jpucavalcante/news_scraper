@@ -12,8 +12,8 @@ description: |
     sitemap -> meta tags -> og (open graph) -> html 
 
 sitemap_url: https://g1.globo.com/rss/g1/educacao/
+item_path: //rss/channel/item
 sitemap_paths:
-  - item_path: //rss/channel/item
   - webpage_link: //rss/channel/item/link
   - title: //rss/channel/item/title
   - date_info: 
