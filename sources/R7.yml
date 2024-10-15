@@ -12,8 +12,8 @@ description: |
     sitemap -> meta tags -> og (open graph) -> html 
 
 sitemap_url: https://www.r7.com/arc/outboundfeeds/sitemap-news/?outputType=xml
+item_path: //urlset/url
 sitemap_paths:
-  - item_path: //urlset/url
   - webpage_link: //urlset/url/loc
   - date_info: 
     - date: //urlset/url/lastmod
