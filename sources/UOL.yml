@@ -12,7 +12,7 @@ description: |
     sitemap -> meta tags -> og (open graph) -> html 
 
 sitemap_url: https://noticias.uol.com.br/sitemap/v2/today.xml
-item_path: //urlset/url
+item_path: //*[name()="urlset"]/*[name()="url"]
 sitemap_paths:
   - webpage_link: //urlset/url/loc
   - date_info: 
