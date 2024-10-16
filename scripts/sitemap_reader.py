@@ -1,8 +1,8 @@
 import requests
 from lxml import etree
 
-def sitemap_item_handler(root: etree.ElementTree, item: str, item_val: str|dict, sitemap_items: dict, n_of_items: int):
-    if item == "date_info":
+def sitemap_item_handler(root: etree.ElementTree, item: str, item_val: str|dict, sitemap_items: dict, n_of_items: int) -> None:
+    if item == 'date_info':
         sitemap_items['date'] = [child.text for child in root.xpath(item_val['date'])[:n_of_items]]
         sitemap_items['date_format'] = [item_val['date_format']]*n_of_items
     else:
@@ -13,7 +13,7 @@ def get_sitemap_items(url: str, sitemap_paths: dict, n_of_items: int = 10) -> di
     try:
         response =  requests.get(url)
     except Exception as e:
-        print('Request failed:', e)
+        print('Request failed:{e}')
         return None
 
     if response.status_code == 200:
