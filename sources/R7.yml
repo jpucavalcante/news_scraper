@@ -13,10 +13,16 @@ description: |
 source_name: R7
 sitemap_url: https://www.r7.com/arc/outboundfeeds/sitemap-news/?outputType=xml
 sitemap_paths:
-  webpage_link: //*[local-name() = 'urlset']/*[local-name() = 'url']/*[local-name() = 'loc']
+  url: //*[local-name() = 'urlset']/*[local-name() = 'url']/*[local-name() = 'loc']
   date_info: 
     date: //*[local-name() = 'urlset']/*[local-name() = 'url']/*[local-name() = 'lastmod']
     date_format: ISO
 webpage_paths:
-  title: //meta[@property='og:title']
-  subtitle: //meta[@property='og:description']
+  title: 
+    tag: meta
+    attribute: property
+    attribute_value: og:title
+  subtitle: 
+    tag: meta
+    attribute: property
+    attribute_value: og:description

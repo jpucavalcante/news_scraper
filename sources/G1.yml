@@ -13,10 +13,13 @@ description: |
 source_name: G1
 sitemap_url: https://g1.globo.com/rss/g1/educacao/
 sitemap_paths:
-  webpage_link: //rss/channel/item/link
+  url: //rss/channel/item/link
   title: //rss/channel/item/title
   date_info: 
     date: //item/pubDate
     date_format: pubDate
 webpage_paths:
-  subtitle: //meta[@name='description']
+  subtitle: 
+    tag: meta
+    attribute: name
+    attribute_value: description
