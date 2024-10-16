@@ -10,14 +10,13 @@ description: |
   One important thing to note here is the stability hierach, the same information can be gathered from differente places, and some
   of them are more likely to change than others, the order of preference is as follows:
     sitemap -> meta tags -> og (open graph) -> html 
-
+source_name: R7
 sitemap_url: https://www.r7.com/arc/outboundfeeds/sitemap-news/?outputType=xml
-item_path: //*[name()="urlset"]/*[name()="url"]
 sitemap_paths:
-  - webpage_link: //urlset/url/loc
-  - date_info: 
-    - date: //urlset/url/lastmod
-    - date_format: ISO
+  webpage_link: //*[local-name() = 'urlset']/*[local-name() = 'url']/*[local-name() = 'loc']
+  date_info: 
+    date: //*[local-name() = 'urlset']/*[local-name() = 'url']/*[local-name() = 'lastmod']
+    date_format: ISO
 webpage_paths:
-  - title: //meta[@property='og:title']
-  - subtitle: //meta[@property='og:description']
+  title: //meta[@property='og:title']
+  subtitle: //meta[@property='og:description']
