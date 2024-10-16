@@ -1,7 +1,7 @@
 import requests
 from lxml import etree
 
-def get_sitemap_items(url, sitemap_paths, n_of_items=10):
+def get_sitemap_items(url: str, sitemap_paths: dict, n_of_items: int = 10) -> dict:
     try:
         response =  requests.get(url)
     except Exception as e:
