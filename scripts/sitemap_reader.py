@@ -1,7 +1,7 @@
 import requests
 from lxml import etree
 
-def sitemap_item_handler(root: etree.ElementTree.Element, item: str, item_val: str|dict, sitemap_items: dict, n_of_items: int):
+def sitemap_item_handler(root: etree.ElementTree, item: str, item_val: str|dict, sitemap_items: dict, n_of_items: int):
     if item == "date_info":
         sitemap_items['date'] = [child.text for child in root.xpath(item_val['date'])[:n_of_items]]
         sitemap_items['date_format'] = [item_val['date_format']]*n_of_items
